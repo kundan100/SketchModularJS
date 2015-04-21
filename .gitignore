@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+steps.txt
 
 # Runtime data
 pids
