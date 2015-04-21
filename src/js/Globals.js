@@ -34,6 +34,7 @@ define(['../../config/ConfigPaths'], function(ConfigPaths) {
 			// Also, the path should NOT include the '.js' file extension.
 			//app: '../app',
 			/*** List of frameworks/libraries to be included in the codebase. ***/
+			/*Added below jquery path, so that it can be used without folder hierarchy...*/
 			jquery: ConfigPaths.libsPath + 'jQuery/jquery'
 		},
         shim: {
