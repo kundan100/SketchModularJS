@@ -6,7 +6,7 @@ define(['Module1'], function(Module1) {
 
     "use strict";
 	console.log("App.js Loaded...", appGlobals.globals);
-	//console.log("jquery=", $);
+	console.log("jquery=", $);
 	/**  */
 	var module1 = new Module1();
 	module1.init();
