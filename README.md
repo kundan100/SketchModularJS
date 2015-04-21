@@ -6,6 +6,13 @@ A skeleton for modular JS based project.
 * r.js is not being used, as of now.
 
 
+
 # Pre-requisite:
 
+
+
+
 # Getting Started:
+
+
+
