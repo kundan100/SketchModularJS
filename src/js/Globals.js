@@ -15,9 +15,6 @@ define(['../../config/ConfigPaths'], function(ConfigPaths) {
 		subscribe: function(eventName, callback){
 			//console.log('GlobalsObj > subscribe');
 			$.Topic(eventName).subscribe(callback);
-		},
-		fn1: function(){
-			console.log('GlobalsObj > fn1');
 		}
 	};
 	
