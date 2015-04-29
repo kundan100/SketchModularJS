@@ -8,7 +8,17 @@ define(['../../config/ConfigPaths'], function(ConfigPaths) {
 	
 	/** Global object available at application level*/
     var GlobalsObj = {
-		fn1: function(){console.log('GlobalsObj > fn1');}
+		publish: function(eventName, data){
+			//console.log('GlobalsObj > publish');
+			$.Deferred().done( $.Topic(eventName).publish).resolve(data);
+		},
+		subscribe: function(eventName, callback){
+			//console.log('GlobalsObj > subscribe');
+			$.Topic(eventName).subscribe(callback);
+		},
+		fn1: function(){
+			console.log('GlobalsObj > fn1');
+		}
 	};
 	
 	
