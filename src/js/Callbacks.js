@@ -1,4 +1,4 @@
-define(['jquery'], function() {
+define([], function() {
     "use strict";
 	console.log("Callbacks.js Loaded...");
 	

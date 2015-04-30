@@ -1,28 +1,6 @@
-define(['../../config/ConfigPaths'], function(ConfigPaths) {
+define(['../../config/ConfigPaths', './../libs/jQuery/jquery'], function(ConfigPaths) {
     "use strict";
-	console.log("Globals.js Loaded...Consider (ConfigPaths+Globals) modules as the first dependency of the application!");
-	
-	
-	console.log("ConfigPaths=", ConfigPaths);
-	
-	
-	/** Global object available at application level*/
-    var GlobalsObj = {
-		publish: function(eventName, data){
-			//console.log('GlobalsObj > publish');
-			$.Deferred().done( $.Topic(eventName).publish).resolve(data);
-		},
-		subscribe: function(eventName, callback){
-			//console.log('GlobalsObj > subscribe');
-			$.Topic(eventName).subscribe(callback);
-		}
-	};
-	
-	
-	
-	window.appGlobals = {
-		globals: GlobalsObj //making the 'GlobalsObj' accessible by 'appGlobals.globals'
-    };
+	console.log("Globals.js Loaded...Consider (ConfigPaths+Globals) modules as the first dependency of the application!", "ConfigPaths=", ConfigPaths);
 	
 	
 	require.config({
@@ -45,18 +23,29 @@ define(['../../config/ConfigPaths'], function(ConfigPaths) {
 			jquery: ConfigPaths.libsPath + 'jQuery/jquery'
 		},
         shim: {
-			'Globals': {
-				deps: ['../../config/ConfigPaths']
-			},
-			'App': {
-				deps: ['Globals']
-			}
+			//only for files which do NOT support AMD
         },
 		waitSeconds: 10
     });
 	//console.log("__________________", require.toUrl(''));
 	//console.log("ConfigPaths=", ConfigPaths.libsPath);
+
 	
+	/** Global object available at application level*/
+    var GlobalsObj = {
+		publish: function(eventName, data){
+			//console.log('GlobalsObj > publish');
+			$.Deferred().done( $.Topic(eventName).publish).resolve(data);
+		},
+		subscribe: function(eventName, callback){
+			//console.log('GlobalsObj > subscribe');
+			$.Topic(eventName).subscribe(callback);
+		}
+	};
+	
+	window.appGlobals = {
+		globals: GlobalsObj //making the 'GlobalsObj' accessible by 'appGlobals.globals'
+    };
 	
     return GlobalsObj;
 });

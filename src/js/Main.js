@@ -1,9 +1,9 @@
-require(['../../config/ConfigPaths', 'Globals', 'Callbacks', 'App'], function(ConfigPaths, Globals, Callbacks, App) {
+require(['../../config/ConfigPaths', 'Globals'], function(ConfigPaths, Globals) {
     "use strict";
 	/**
 	* @description test....
 	*/
-	console.log("Main.js Loaded...This is the MAIN ENTRY JS (single point entry); To ensure that ALL the configuration files have been loaded before moving forward, do the appropriate 'shim' dependency configuration.",  " jquery==", $);
+	console.log("Main.js Loaded...This is the MAIN ENTRY JS (single point entry); To ensure that ALL the configuration files have been loaded before moving forward, do the appropriate 'shim' dependency configuration.");
     /**
 	* Please pass all your configuration dependencies and one main application JS logic file (again, as single entry point to move forward); And to be on safer side (load configuration files before main app logic file), Do the Shim configuration as --- shim: { 'App': { deps: ['Globals'] } }
 	* It will ensure that config has been loaded (path vars are available to be used) when you will require those in your module going forward.
@@ -14,6 +14,7 @@ require(['../../config/ConfigPaths', 'Globals', 'Callbacks', 'App'], function(Co
     //Now Start the main app logic, OR just put it in here
 	//TODO : Why concat task is FAILING to understand this????????????
     //require(['Main', 'jquery']);
+	require(['App']);
 	
 });
 

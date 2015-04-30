@@ -1,4 +1,4 @@
-define(['Module1', 'Module2'], function(Module1, Module2) {
+define(['Callbacks', 'Module1', 'Module2'], function(Callbacks, Module1, Module2) {
 	/**
     * A module representing a testModule.
     * @exports src/js/Module1
