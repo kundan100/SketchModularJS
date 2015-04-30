@@ -1,5 +1,7 @@
 define(['jquery'], function() {
     "use strict";
+	console.log("Callbacks.js Loaded...");
+	
     var topics = {};
     jQuery.Topic = function(id) {
         var callbacks, method,
