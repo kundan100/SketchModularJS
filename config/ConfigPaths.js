@@ -1,4 +1,6 @@
 define(function() {	
+	console.log("ConfigPaths.js Loaded...");
+	
 	return {
 		"appPath": "./",
 		"srcPath": "./src/",
