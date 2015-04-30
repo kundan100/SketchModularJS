@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 					//appDir: "src/",
 					//baseUrl: '<%= configPaths.JSPath %>',
 					baseUrl: configPaths.srcPath + configPaths.JSPath,
-					include: ['Main'],
+					include: ['Main', 'App'],
 					//dir: 'target/',
 					//optimize: 'uglify',
 					optimize: 'none',
@@ -54,9 +54,9 @@ module.exports = function(grunt) {
 						jquery: '../libs/jQuery/jquery'
 					},
 					shim: {
-						'App': {
+						/*'App': {
 							deps: ['Globals']
-						}
+						}*/
 						/*underscore: {
 							exports: '_'
 						},
