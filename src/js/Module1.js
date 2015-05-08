@@ -7,15 +7,15 @@ define([], function() {
 		this.init = function() {
 			console.log("Module1 > init...");
 			addEvents();
-		}
+		};
 		
 		this.update = function(pm) {
 			console.log("Module1 > update...with parameter=", pm);
-		}
+		};
 						
 		var addEvents = function(){
 			console.log("Module1 > addEvents...");
-		}
-	}	
+		};
+	};
 	return Module1;
 });
