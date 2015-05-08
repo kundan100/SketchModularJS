@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	'use strict';
 	/** Project configuration.*/
 	
-	var configPaths = function () {
+	var configPaths = (function () {
 		/**
 		* Read config stored in JS; It will read function body including it's syntax, as text
 		* Remove unnecessay parts like 'function', 'return', '{", etc...
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		str = str.split("}");
 		str = "{"+(str[0]).trim()+"}";
 		return JSON.parse(str);
-	}();
+	})();
 	
 	
 	grunt.initConfig({
