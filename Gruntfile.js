@@ -29,6 +29,13 @@ module.exports = function(grunt) {
 		
 
 		/** Defining Tasks */
+		jshint: {
+            all: [configPaths.appPath+'Gruntfile.js', configPaths.srcPath+configPaths.JSPath+"**/*.js"],
+            options: {
+                ignores: [configPaths.srcPath+configPaths.JSPath+"Consolidated.js", "src/libs/**/*.js"],
+                jshintrc: 'config/.jshintrc'
+            }
+        },
 		requirejs: {
 			compile: {
 				// !! You can drop your app.build.js config wholesale into 'options'
@@ -83,13 +90,20 @@ module.exports = function(grunt) {
 	});
 	
 	/** Load the plugins/tasks. */
+	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	//grunt.loadNpmTasks('grunt-contrib-uglify');
 	//grunt.loadNpmTasks('grunt-jsdoc');
 	
 	
 	/** Register tasks. */
-	grunt.registerTask('default', ['requirejs']);
+	grunt.registerTask("default", [
+        "jshint"
+    ]);
+	grunt.registerTask("build", [
+        "jshint",
+        "requirejs"
+    ]);
 	grunt.registerTask('consolidateJS', ['requirejs']);
 		
 };
