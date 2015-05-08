@@ -4,7 +4,7 @@ define([], function() {
 	
     var topics = {};
     jQuery.Topic = function(id) {
-        var callbacks, method,
+        var callbacks,
 			topic = id && topics[ id ];
         
 		if (!topic) {
