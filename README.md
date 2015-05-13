@@ -16,3 +16,5 @@ A skeleton for modular JS based project.
 
 
 
+# TODO:
+* Spell check implementation
