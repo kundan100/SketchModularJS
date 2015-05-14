@@ -2,7 +2,7 @@
   "name": "sketch-modular-js",
   "version": "0.1.0",
   "description": "A skeleton for modular JS based project.",
-  "main": "Main.js",
+  "main": "src/js/Main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
