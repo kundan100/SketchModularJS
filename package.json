@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Kumar Kundan",
+  "contributors": [
+    "Ashwin Hegde <ashwin.hegde3@gmail.com>"
+  ],
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
