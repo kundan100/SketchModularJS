@@ -20,7 +20,9 @@ define(['../../config/ConfigPaths', './../libs/jQuery/jquery'], function(ConfigP
 			//app: '../app',
 			/*** List of frameworks/libraries to be included in the codebase. ***/
 			/*Added below jquery path, so that it can be used without folder hierarchy...*/
-			jquery: ConfigPaths.libsPath + 'jQuery/jquery'
+			jquery: ConfigPaths.libsPath + 'jQuery/jquery',
+			handlebars: ConfigPaths.libsPath + 'handlebars/handlebars',
+			text: ConfigPaths.libsPath + 'require/plugins/text'
 		},
         shim: {
 			//only for files which do NOT support AMD
