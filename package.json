@@ -1,16 +1,21 @@
 {
-  "name": "SketchModularJS",
-  "version": "0.1.0",
+  "name": "sketch-modular-js",
+  "version": "0.0.0",
   "description": "A skeleton for modular JS based project.",
-  "main": "Main.js",
+  "main": "src/js/Main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kumar Kundan",
+  "contributors": [
+    "Ashwin Hegde <ashwin.hegde3@gmail.com>"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-requirejs": "^0.4.4"
+    "grunt-contrib-requirejs": "^0.4.4",
+    "mocha": "^2.2.4",
+    "chai": "^2.3.0"
   }
 }
