@@ -17,4 +17,5 @@ A skeleton for modular JS based project.
 
 
 # TODO:
+* Code coverage - Istanbul
 * Spell check implementation
