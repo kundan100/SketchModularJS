@@ -1,4 +1,4 @@
-require(['../../config/ConfigPaths', 'Globals'], function(ConfigPaths, Globals) {
+require(['../../config/ConfigPaths', 'Globals'], function() {
     "use strict";
 	/**
 	* @description test....
