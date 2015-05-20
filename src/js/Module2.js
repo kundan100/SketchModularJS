@@ -20,6 +20,12 @@ define([], function() {
 		var addEvents = function(){
 			console.log("Module2 > addEvents...");
 		};
+		
+		this.add = function(a, b) {
+			console.log("Module2 > add...");
+			return a+b;
+		};
+		
 	};	
 	return Module2;
 });
