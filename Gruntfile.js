@@ -83,6 +83,17 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		cafemocha: {
+            bdd: {
+                src: 'test/*.js',
+                options: {
+                    ui: 'bdd',
+                    require: [
+                        'chai',
+                    ],
+                }
+            }
+        },
 		build: {
 			//src: 'src/<%= pkg.name %>.js',
 			//dest: 'build/<%= pkg.name %>.min.js'
@@ -94,6 +105,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	//grunt.loadNpmTasks('grunt-contrib-uglify');
 	//grunt.loadNpmTasks('grunt-jsdoc');
+	grunt.loadNpmTasks('grunt-cafe-mocha');
+	
 	
 	
 	/** Register tasks. */
@@ -105,5 +118,6 @@ module.exports = function(grunt) {
         "requirejs"
     ]);
 	grunt.registerTask('consolidateJS', ['requirejs']);
+	grunt.registerTask('bdd', ['cafemocha']);
 		
 };
