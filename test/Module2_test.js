@@ -14,9 +14,16 @@ describe('Module2_test _____', function(){
         });
     });
 	
-	describe('.add()__', function(){
+	describe('.add() __', function(){
 		it('should return 4 when the parameter is 2 & 2', function(){
 			assert.equal(module2.add(2,2), 4)
 		});
+		it('should return 0 when any of the parameter is -ve', function(){
+			assert.equal(module2.add(2,-4), 0);
+			assert.equal(module2.add(-5,4), 0);
+			assert.equal(module2.add(-5,-4), 0);
+		});
 	})
+	
+	
 });

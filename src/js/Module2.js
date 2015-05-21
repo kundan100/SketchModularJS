@@ -23,7 +23,11 @@ define([], function() {
 		
 		this.add = function(a, b) {
 			console.log("Module2 > add...");
-			return a+b;
+			if(a<0 || b<0){
+				return 0;
+			}else{
+				return a+b;
+			}
 		};
 		
 	};	
