@@ -17,32 +17,40 @@ if( typeof requirejs === 'undefined' ) {
 console.log("chai=", chai)
 console.log("expect=", expect)*/
 
-describe('Module2_test_____', function(){
+describe('Module2_test', function(){
 	//
-	var module2;
+	var targetModulePath = "../src/js/Module2",
+		targetModuleRef,
+		targetModule, targetModuleObj;
+	var exposedMethods = ["init", "add", "update"]
+	
 	before(function(done) {
-        requirejs(['../src/js/Module2'], function(Module2) {
-            module2 = new Module2();			
+        requirejs([targetModulePath], function(targetModuleRef) {
+			targetModule = targetModuleRef;
+            targetModuleObj = new targetModule();		
             done(); // We can launch the tests!
         });
     });
 	
-	describe('All generic tests__', function(){
+	describe('All generic tests', function(){
 		it('should exist', function(){
-			expect(module2).exist;
+			expect(targetModuleObj).exist;
+			expect(targetModuleObj).to.be.instanceOf(targetModule);
+			var lenTemp = exposedMethods.length;
+			for (var i=0; i<lenTemp; i++){
+				expect(targetModuleObj[exposedMethods[i]]).exist;
+			}
 		});
 	});
-	describe('.add()__', function(){
-		
+	describe('.add()', function(){		
 		it('should return 4 when the parameter is 2 & 2', function(){
-			//assert.equal(module2.add(2,2), 4);
-			expect(module2.add(2,2)).equal(4);
-			
+			//assert.equal(targetModuleObj.add(2,2), 4);
+			expect(targetModuleObj.add(2,2)).equal(4);
 		});
 		it('should return 0 when any of the parameter is -ve', function(){
-			//assert.equal(module2.add(2,-4), 0);
-			//assert.equal(module2.add(-5,4), 0);
-			//assert.equal(module2.add(-5,-4), 0);
+			expect(targetModuleObj.add(2,-4)).equal(0);
+			expect(targetModuleObj.add(-5,4)).equal(0);
+			expect(targetModuleObj.add(-6,-4)).equal(0);
 		});
 	});
 });
