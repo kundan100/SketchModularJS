@@ -87,8 +87,6 @@ require(['../../config/ConfigPaths', 'Globals'], function() {
 	//TODO : Why concat task is FAILING to understand this????????????
     //require(['Main', 'jquery']);
 	
-	//consloe.log(ConfigPaths.JSPath);
-	//consloe.log(Globals);
 	require(['App']);
 	
 });
