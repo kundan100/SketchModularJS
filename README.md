@@ -7,6 +7,9 @@ A skeleton for modular JS based project.
 
 
 # HowTo:
+* Grunt Tasks
+  1. build / default = linting+concatenation
+  2. requirejs / consolidateJS
 * Test Framework
   1. Keep all the test case files in "test" folder
   2. Run from browser : index_test.html
