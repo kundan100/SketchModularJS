@@ -1,4 +1,4 @@
-require(['../../config/ConfigPaths', 'Globals'], function(ConfigPaths, Globals) {
+require(['../../config/ConfigPaths', 'Globals'], function() {
     "use strict";
 	/**
 	* @description test....
@@ -14,6 +14,7 @@ require(['../../config/ConfigPaths', 'Globals'], function(ConfigPaths, Globals) 
     //Now Start the main app logic, OR just put it in here
 	//TODO : Why concat task is FAILING to understand this????????????
     //require(['Main', 'jquery']);
+	
 	require(['App']);
 	
 });

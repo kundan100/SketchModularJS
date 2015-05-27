@@ -58,7 +58,9 @@ module.exports = function(grunt) {
 					fileExclusionRegExp: /^(r|build)\.js$/,
 					//inlineText: true,
 					paths: {
-						jquery: '../libs/jQuery/jquery'
+						jquery: configPaths.libsPath+'jQuery/jquery',
+						handlebars: configPaths.libsPath+'handlebars/handlebars',
+						text: configPaths.libsPath+'require/plugins/text'
 					},
 					shim: {
 						/*'App': {
