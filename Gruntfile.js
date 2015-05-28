@@ -17,80 +17,19 @@ module.exports = function(grunt) {
 		return JSON.parse(str);
 	})();
 	
+	/**
+	* Loading tasks (kept in seperate js files) from "./tasks/" folder.
+	*/
+	var gruntConfig = {};
+	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths);
+	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths);
+	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths);
+	grunt.initConfig(gruntConfig);
+	//console.log("__________________");
+	//console.log(gruntConfig);
+	//console.log("__________________");
 	
-	grunt.initConfig({
-		/**
-		 * Grunt global vars; Many of the Grunt tasks can use these vars.
-		 */
-		//
-		/** imports the JSON metadata stored in package.json into the grunt config. 
-		 * Because <% %> template strings may reference any config properties, configuration data like filepaths and file lists may be specified this way to reduce repetition. e.g.-> src: 'src/<%= pkg.name %>.js'
-		 */
-		//pkg: grunt.file.readJSON('package.json'),
-		
-
-		/** Defining Tasks */
-		jshint: {
-            all: [configPaths.appPath+'Gruntfile.js', configPaths.srcPath+configPaths.JSPath+"**/*.js"],
-            options: {
-                ignores: [configPaths.srcPath+configPaths.JSPath+"Consolidated.js", "src/libs/**/*.js"],
-                jshintrc: 'config/.jshintrc'
-            }
-        },
-		requirejs: {
-			compile: {
-				// !! You can drop your app.build.js config wholesale into 'options'
-				options: {
-					//appDir: "src/",
-					//baseUrl: '<%= configPaths.JSPath %>',
-					baseUrl: configPaths.srcPath + configPaths.JSPath,
-					include: ['Main', 'App'],
-					//dir: 'target/',
-					//optimize: 'uglify',
-					optimize: 'none',
-					//optimizeCss: 'standard',
-					//mainConfigFile:'./src/main.js',
-					/*modules:[{
-						name:'MyModule'
-					}],*/
-					//logLevel: 0,
-					//findNestedDependencies: true,
-					//fileExclusionRegExp: /^\./,
-					fileExclusionRegExp: /^(r|build)\.js$/,
-					//inlineText: true,
-					paths: {
-						jquery: configPaths.libsPath+'jQuery/jquery',
-						handlebars: configPaths.libsPath+'handlebars/handlebars',
-						text: configPaths.libsPath+'require/plugins/text'
-					},
-					shim: {
-						/*'App': {
-							deps: ['Globals']
-						}*/
-						/*underscore: {
-							exports: '_'
-						},
-						backbone: {
-							deps: [
-								'underscore',
-								'jquery'
-							],
-							exports: 'Backbone'
-						},
-						backboneLocalstorage: {
-							deps: ['backbone'],
-							exports: 'Store'
-						}*/
-					},
-					out: configPaths.srcPath + configPaths.JSPath + "Consolidated.js"
-				}
-			}
-		},
-		build: {
-			//src: 'src/<%= pkg.name %>.js',
-			//dest: 'build/<%= pkg.name %>.min.js'
-		}
-	});
+	
 	
 	/** Load the plugins/tasks. */
 	grunt.loadNpmTasks("grunt-contrib-jshint");
