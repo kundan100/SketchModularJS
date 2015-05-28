@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 	'use strict';
+	/** A Gruntfile is simply a JS file that loads tasks and sets up the configuration*/
 	/** Project configuration.*/
 	
 	var configPaths = (function () {
