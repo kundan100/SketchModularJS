@@ -11,7 +11,7 @@ if( typeof requirejs === 'undefined' ) {
 }else{
 	//for Browser
 	//var assert = require("../node_modules/chai/chai.js"); //var assert = require("assert");
-	var expect = chai.expect;
+	//var expect = chai.expect;
 }
 /*console.log("requirejs=", requirejs)
 console.log("chai=", chai)
