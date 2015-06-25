@@ -10,5 +10,6 @@ module.exports = function(grunt, configPaths) {
 	};
 	//load npm
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	//
 	return objConfig;
 }
