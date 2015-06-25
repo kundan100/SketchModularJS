@@ -27,13 +27,9 @@ module.exports = function(grunt) {
 	grunt.initConfig(gruntConfig);
 	//console.log("__________________");
 	//console.log(gruntConfig);
-	//console.log("__________________");
+		
 	
-	
-	
-	/** Load the plugins/tasks. */
-	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	/** Load the plugins/tasks. --- Done from/inside individual task files*/
 	//grunt.loadNpmTasks('grunt-contrib-uglify');
 	//grunt.loadNpmTasks('grunt-jsdoc');
 	

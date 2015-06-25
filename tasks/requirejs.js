@@ -1,7 +1,7 @@
 module.exports = function(grunt, configPaths) {
 	console.log("requirejs.js Loaded...");
-	
-	return {
+	//configure npm
+	var objConfig = {
 		compile: {
 			// !! You can drop your app.build.js config wholesale into 'options'
 			options: {
@@ -48,6 +48,11 @@ module.exports = function(grunt, configPaths) {
 				},
 				out: configPaths.srcPath + configPaths.JSPath + "Consolidated.js"
 			}
-		}		
-	}
+		}
+	};
+	
+	//load npm
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	//
+	return objConfig;
 }
