@@ -29,7 +29,7 @@ define(['../../config/ConfigPaths', './../libs/handlebars/handlebars', './../lib
         shim: {
 			//only for files which do NOT support AMD
         },
-		waitSeconds: 10
+		waitSeconds: 15
     });
 	//console.log("__________________", require.toUrl(''));
 	//console.log("ConfigPaths=", ConfigPaths.libsPath);

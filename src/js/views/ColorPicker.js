@@ -6,7 +6,7 @@ define([
 	
 	appGlobals.globals.loadCss("libs/jQuery/plugins/jquery-minicolors-master/jquery.minicolors.css");
 	
-    var Module1 = function() {
+    var ColorPicker = function() {
 		console.log("ColorPicker instantiated...");
 		
 		this.init = function() {
@@ -67,5 +67,5 @@ define([
 		};
 		
 	};
-	return Module1;
+	return ColorPicker;
 });
