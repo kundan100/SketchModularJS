@@ -1,4 +1,4 @@
-define(['Callbacks', 'Module1', 'Module2'], function(Callbacks, Module1, Module2) {
+define(['Callbacks', 'Module1', 'Module2', 'colorPicker'], function(Callbacks, Module1, Module2, ColorPicker) {
 	/**
     * A module representing a testModule.
     * @exports src/js/Module1
@@ -17,6 +17,11 @@ define(['Callbacks', 'Module1', 'Module2'], function(Callbacks, Module1, Module2
 	var module2 = new Module2();
 	module2.init();	
 	module2.update();
+	
+	//
+	var colorPicker = new ColorPicker();
+	colorPicker.init();
+	
 	
 	
 	

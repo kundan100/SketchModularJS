@@ -1,4 +1,4 @@
-define(['../../config/ConfigPaths', './../libs/jQuery/jquery'], function(ConfigPaths) {
+define(['../../config/ConfigPaths', './../libs/handlebars/handlebars', './../libs/jQuery/jquery', './../libs/jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min'], function(ConfigPaths, Handlebars) {
     "use strict";
 	console.log("Globals.js Loaded...Consider (ConfigPaths+Globals) modules as the first dependency of the application!", "ConfigPaths=", ConfigPaths);
 	
@@ -21,8 +21,10 @@ define(['../../config/ConfigPaths', './../libs/jQuery/jquery'], function(ConfigP
 			/*** List of frameworks/libraries to be included in the codebase. ***/
 			/*Added below jquery path, so that it can be used without folder hierarchy...*/
 			jquery: ConfigPaths.libsPath + 'jQuery/jquery',
+			jquery_minicolors: ConfigPaths.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
 			handlebars: ConfigPaths.libsPath + 'handlebars/handlebars',
-			text: ConfigPaths.libsPath + 'require/plugins/text'
+			text: ConfigPaths.libsPath + 'require/plugins/text',
+			colorPicker: 'views/ColorPicker'
 		},
         shim: {
 			//only for files which do NOT support AMD
@@ -42,6 +44,23 @@ define(['../../config/ConfigPaths', './../libs/jQuery/jquery'], function(ConfigP
 		subscribe: function(eventName, callback){
 			//console.log('GlobalsObj > subscribe');
 			$.Topic(eventName).subscribe(callback);
+		},
+		loadTemplate: function (domEl, tpl, data) {
+			console.log("tpl=", tpl);
+			var model = (data) ? data : {};
+			$(domEl).html(Handlebars.compile(tpl)(model));
+		},
+		loadCss: function (url) {
+			/*
+			* There are issues knowing when a CSS file has been loaded, particularly in Gecko/Firefox when the file is loaded from another domain....
+			* Ref : http://requirejs.org/docs/faq-advanced.html
+			* IF THIS APPROACH GIVES YOU ERROR, YOU SHOULD DIRECTLY LINK THE CSS FILE IN HTML FILE.
+			*/
+			var link = document.createElement("link");
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			link.href = url;
+			document.getElementsByTagName("head")[0].appendChild(link);
 		}
 	};
 	
