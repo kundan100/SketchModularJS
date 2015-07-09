@@ -1,5 +1,6 @@
 define([
-		"text!../templates/colorPickerTpl.html"
+		"text!../templates/colorPickerTpl.html",
+		"jquery_minicolors"
 		], function(colorPickerTpl) {
     "use strict";
 	console.log("ColorPicker.js Loaded...");
