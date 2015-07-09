@@ -11,19 +11,18 @@ define([
 		
 		this.init = function() {
 			console.log("Module1 > init...");
-			
-			this.template("#header", HeaderTpl, {
-				"moduleName": "Module 1 data coming dynamically"
-			});
-			this.template("#footer", FooterTpl);
-			
+			//
+			loadTemplates();
+			//
 			addEvents();
 		};
 		
-		this.template = function(domEl, tpl, data) {
-			console.log("tpl=", tpl);
-			var model = (data) ? data : {};
-			$(domEl).html(Handlebars.compile(tpl)(model));
+		var loadTemplates = function(){
+			console.log("Module1 > loadTemplates...");
+			appGlobals.globals.loadTemplate("#header", HeaderTpl, {
+				"moduleName": "Module 1 data coming dynamically"
+			});
+			appGlobals.globals.loadTemplate("#footer", FooterTpl);
 		};
 		
 		this.update = function(pm) {
