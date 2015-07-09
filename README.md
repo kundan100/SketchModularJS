@@ -1,6 +1,6 @@
 # Broken functionalities
 * grunt requirejs/consolidateJS ---> JS concatenation broken
-* 
+
 # SketchRequireJS
 A skeleton for modular JS based project.
 * For script/module loading ---> require.js
