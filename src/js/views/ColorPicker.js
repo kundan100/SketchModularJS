@@ -4,8 +4,12 @@ define([
 		], function(colorPickerTpl) {
     "use strict";
 	console.log("ColorPicker.js Loaded...");
-	
-	appGlobals.globals.loadCss("libs/jQuery/plugins/jquery-minicolors-master/jquery.minicolors.css");
+	//This should be here ONLY, to avoid repeated loading on module instantiation
+	appGlobals.globals.loadCss("libs/jQuery/plugins/jquery-minicolors-master/jquery.minicolors.css"); //path is with respect to index.html
+	if(!appGlobals.globals.isCSSConcatenated){
+		console.log("css/colorPicker.css Loaded...");
+		appGlobals.globals.loadCss("css/colorPicker.css");
+	}
 	
     var ColorPicker = function() {
 		console.log("ColorPicker instantiated...");
@@ -37,7 +41,7 @@ define([
 		
 		var configure = function(){
 			console.log("ColorPicker > configure...");
-			$('.demo').each( function() {
+			$('#colorPicker input#color-txt').each( function() {
 				//
 				// Dear reader, it's actually very easy to initialize MiniColors. For example:
 				//
