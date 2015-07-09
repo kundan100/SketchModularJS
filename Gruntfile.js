@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		* Remove unnecessay parts like 'function', 'return', '{", etc...
 		* convert text to JSON and return.
 		*/
-		var str = grunt.file.read('./config/ConfigPaths.js');
+		var str = grunt.file.read('./src/config/ConfigPaths.js');
 		str = str.split("{");
 		str = str[2];
 		str = str.split("}");

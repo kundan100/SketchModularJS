@@ -1,8 +1,7 @@
 define([
 		"text!../templates/common/headerTpl.html", 
-		"text!../templates/common/footerTpl.html",
-		"handlebars"
-		], function(HeaderTpl, FooterTpl, Handlebars) {
+		"text!../templates/common/footerTpl.html"
+		], function(HeaderTpl, FooterTpl) {
     "use strict";
 	console.log("Module1.js Loaded...");
 	
