@@ -22,7 +22,7 @@ define([
 		
 		var loadTemplates = function(){
 			console.log("ColorPicker > loadTemplates...");
-			appGlobals.globals.loadTemplate("#colorPicker", colorPickerTpl, {
+			appGlobals.globals.loadTemplate("#colorPickerContainer", colorPickerTpl, {
 				//"moduleName": "Module 1 data coming dynamically"
 			});
 		};
