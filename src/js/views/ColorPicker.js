@@ -62,7 +62,9 @@ define([
 						var log;
 						try {
 							log = hex ? hex : 'transparent';
-							if( opacity ) log += ', ' + opacity;
+							if( opacity ) {
+								log += ', ' + opacity;
+							}
 							console.log(log);
 						} catch(e) {}
 					},
