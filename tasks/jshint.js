@@ -2,9 +2,9 @@ module.exports = function(grunt, configPaths) {
 	console.log("jshint.js Loaded...");
 	//configure npm
 	var objConfig = {
-		all: [configPaths.appPath+'Gruntfile.js', configPaths.srcPath+configPaths.JSPath+"**/*.js"],
+		all: [configPaths.app.appPath+'Gruntfile.js', configPaths.app.srcPath+configPaths.app.JSPath+"**/*.js"],
 		options: {
-			ignores: [configPaths.srcPath+configPaths.JSPath+"Consolidated.js", "src/libs/**/*.js"],
+			ignores: [configPaths.app.srcPath+configPaths.app.JSPath+"Consolidated.js", "src/libs/**/*.js"],
 			jshintrc: 'tasks/config/.jshintrc'
 		}
 	};

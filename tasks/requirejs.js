@@ -6,8 +6,8 @@ module.exports = function(grunt, configPaths) {
 			// !! You can drop your app.build.js config wholesale into 'options'
 			options: {
 				//appDir: "src/",
-				//baseUrl: '<%= configPaths.JSPath %>',
-				baseUrl: configPaths.srcPath + configPaths.JSPath,
+				//baseUrl: '<%= configPaths.app.JSPath %>',
+				baseUrl: configPaths.app.srcPath + configPaths.app.JSPath,
 				include: ['Main', 'App'],
 				//dir: 'target/',
 				//optimize: 'uglify',
@@ -23,10 +23,10 @@ module.exports = function(grunt, configPaths) {
 				fileExclusionRegExp: /^(r|build)\.js$/,
 				//inlineText: true,
 				paths: {
-					jquery: configPaths.libsPath+'jQuery/jquery',
-					jquery_minicolors: configPaths.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
-					handlebars: configPaths.libsPath+'handlebars/handlebars',
-					text: configPaths.libsPath+'require/plugins/text',
+					jquery: configPaths.app.libsPath+'jQuery/jquery',
+					jquery_minicolors: configPaths.app.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
+					handlebars: configPaths.app.libsPath+'handlebars/handlebars',
+					text: configPaths.app.libsPath+'require/plugins/text',
 					colorPicker: 'views/ColorPicker'
 				},
 				shim: {
@@ -48,7 +48,7 @@ module.exports = function(grunt, configPaths) {
 						exports: 'Store'
 					}*/
 				},
-				out: configPaths.srcPath + configPaths.JSPath + "Consolidated.js"
+				out: configPaths.app.srcPath + configPaths.app.JSPath + "Consolidated.js"
 			}
 		}
 	};

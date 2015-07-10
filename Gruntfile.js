@@ -26,9 +26,9 @@ module.exports = function(grunt) {
 	* Loading tasks (kept in seperate js files) from "./tasks/" folder.
 	*/
 	var gruntConfig = {};
-	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths.app);
-	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths.app);
-	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths.app);
+	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths);
+	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths);
+	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths);
 	grunt.initConfig(gruntConfig);
 	//console.log("__________________");
 	//console.log(gruntConfig);
