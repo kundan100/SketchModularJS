@@ -26,8 +26,10 @@ module.exports = function(grunt) {
 	* Loading tasks (kept in seperate js files) from "./tasks/" folder.
 	*/
 	var gruntConfig = {};
+	//standalone tasks
 	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths);
 	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths);
+	//tasks created out of mix-n-match of tasks
 	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths);
 	grunt.initConfig(gruntConfig);
 	//console.log("__________________");
@@ -41,7 +43,11 @@ module.exports = function(grunt) {
 	
 	/** Register tasks. */
 	grunt.registerTask("default", [
-        "build"
+        "all"
+    ]);
+	grunt.registerTask("all", [
+        "jshint",
+        "requirejs"
     ]);
 	grunt.registerTask("build", [
         "jshint",
