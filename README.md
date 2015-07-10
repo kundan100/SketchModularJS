@@ -1,5 +1,11 @@
 # Broken functionalities
-* grunt requirejs/consolidateJS ---> JS concatenation broken
+* ALL working fine
+
+# Hot to test if everything is working fine, after some change
+* grunt ---> runs all the grunt tasks; see if nothing is broken on console
+* npm test ---> see if nothing is broken on the console
+* src/index.html in browser (FF) ---> see if there is no error in console and page renders
+* test/index_test.html in browser (FF) ---> see if there is no error in console and page renders with all tests passed
 
 # SketchRequireJS
 A skeleton for modular JS based project.
