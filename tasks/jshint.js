@@ -5,7 +5,7 @@ module.exports = function(grunt, configPaths) {
 		all: [configPaths.appPath+'Gruntfile.js', configPaths.srcPath+configPaths.JSPath+"**/*.js"],
 		options: {
 			ignores: [configPaths.srcPath+configPaths.JSPath+"Consolidated.js", "src/libs/**/*.js"],
-			jshintrc: 'config/.jshintrc'
+			jshintrc: 'tasks/config/.jshintrc'
 		}
 	};
 	//load npm
