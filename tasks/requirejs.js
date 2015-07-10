@@ -24,8 +24,10 @@ module.exports = function(grunt, configPaths) {
 				//inlineText: true,
 				paths: {
 					jquery: configPaths.libsPath+'jQuery/jquery',
+					jquery_minicolors: configPaths.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
 					handlebars: configPaths.libsPath+'handlebars/handlebars',
-					text: configPaths.libsPath+'require/plugins/text'
+					text: configPaths.libsPath+'require/plugins/text',
+					colorPicker: 'views/ColorPicker'
 				},
 				shim: {
 					/*'App': {
