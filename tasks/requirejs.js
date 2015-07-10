@@ -1,4 +1,4 @@
-module.exports = function(grunt, configPaths) {
+module.exports = function(grunt, ConfigPaths) {
 	console.log("requirejs.js Loaded...");
 	//configure npm
 	var objConfig = {
@@ -6,8 +6,8 @@ module.exports = function(grunt, configPaths) {
 			// !! You can drop your app.build.js config wholesale into 'options'
 			options: {
 				//appDir: "src/",
-				//baseUrl: '<%= configPaths.app.JSPath %>',
-				baseUrl: configPaths.app.srcPath + configPaths.app.JSPath,
+				//baseUrl: '<%= ConfigPaths.app.JSPath %>',
+				baseUrl: "src/" + ConfigPaths.requirejs.baseUrl,
 				include: ['Main', 'App'],
 				//dir: 'target/',
 				//optimize: 'uglify',
@@ -22,14 +22,9 @@ module.exports = function(grunt, configPaths) {
 				//fileExclusionRegExp: /^\./,
 				fileExclusionRegExp: /^(r|build)\.js$/,
 				//inlineText: true,
-				paths: {
-					jquery: configPaths.app.libsPath+'jQuery/jquery',
-					jquery_minicolors: configPaths.app.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
-					handlebars: configPaths.app.libsPath+'handlebars/handlebars',
-					text: configPaths.app.libsPath+'require/plugins/text',
-					colorPicker: 'views/ColorPicker'
-				},
+				paths: ConfigPaths.requirejs.paths,
 				shim: {
+					//just backed up for reference
 					/*'App': {
 						deps: ['Globals']
 					}*/
@@ -48,7 +43,8 @@ module.exports = function(grunt, configPaths) {
 						exports: 'Store'
 					}*/
 				},
-				out: configPaths.app.srcPath + configPaths.app.JSPath + "Consolidated.js"
+				shim: ConfigPaths.requirejs.shim,
+				out: ConfigPaths.app.srcPath + ConfigPaths.app.JSPath + "Consolidated.js"
 			}
 		}
 	};
