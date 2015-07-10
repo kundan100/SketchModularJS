@@ -3,27 +3,32 @@ module.exports = function(grunt) {
 	/** A Gruntfile is simply a JS file that loads tasks and sets up the configuration*/
 	/** Project configuration.*/
 	
-	var configPaths = (function () {
+	function fn2json(fnPath) {
 		/**
 		* Read config stored in JS; It will read function body including it's syntax, as text
 		* Remove unnecessay parts like 'function', 'return', '{", etc...
 		* convert text to JSON and return.
 		*/
-		var str = grunt.file.read('./src/config/ConfigPaths.js');
-		str = str.split("{");
-		str = str[2];
-		str = str.split("}");
-		str = "{"+(str[0]).trim()+"}";
+		var str = grunt.file.read(fnPath);
+		str = str.split("={");
+		if (str.length === 1) {
+			str = str[0];
+			str = str.split("= {");
+		}
+		str = str[1];
+		str = str.split("return");
+		str = "{"+(str[0]).trim();
 		return JSON.parse(str);
-	})();
+	}
+	var configPaths = fn2json('./src/config/ConfigPaths.js');
 	
 	/**
 	* Loading tasks (kept in seperate js files) from "./tasks/" folder.
 	*/
 	var gruntConfig = {};
-	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths);
-	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths);
-	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths);
+	gruntConfig['jshint'] = require('./tasks/' + 'jshint.js')(grunt, configPaths.app);
+	gruntConfig['requirejs'] = require('./tasks/' + 'requirejs.js')(grunt, configPaths.app);
+	gruntConfig['build'] = require('./tasks/' + 'build.js')(grunt, configPaths.app);
 	grunt.initConfig(gruntConfig);
 	//console.log("__________________");
 	//console.log(gruntConfig);

@@ -1,6 +1,6 @@
 define(['../config/ConfigRequire', './../libs/handlebars/handlebars', './../libs/jQuery/jquery'], function(ConfigRequire, Handlebars) {
     "use strict";
-	console.log("Globals.js Loaded...Consider (ConfigPaths+Globals) modules as the first dependency of the application!", "ConfigRequire=", ConfigRequire);
+	console.log("Globals.js Loaded...Consider (Globals) modules as the first dependency of the application!", "ConfigRequire=", ConfigRequire);
 	
 	
 	

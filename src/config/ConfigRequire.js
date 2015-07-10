@@ -3,12 +3,12 @@ define(['../config/ConfigPaths'], function(ConfigPaths) {
 	console.log("ConfigRequire.js Loaded...");
 	
 	var ConfigRequire = {
-		baseUrl: ConfigPaths.JSPath,
+		baseUrl: ConfigPaths.app.JSPath,
 		paths: {
-			jquery: ConfigPaths.libsPath + 'jQuery/jquery',
-			jquery_minicolors: ConfigPaths.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
-			handlebars: ConfigPaths.libsPath + 'handlebars/handlebars',
-			text: ConfigPaths.libsPath + 'require/plugins/text',
+			jquery: ConfigPaths.app.libsPath + 'jQuery/jquery',
+			jquery_minicolors: ConfigPaths.app.libsPath + 'jQuery/plugins/jquery-minicolors-master/jquery.minicolors.min',
+			handlebars: ConfigPaths.app.libsPath + 'handlebars/handlebars',
+			text: ConfigPaths.app.libsPath + 'require/plugins/text',
 			colorPicker: 'views/ColorPicker'
 		},
         shim: {
