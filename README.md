@@ -1,7 +1,7 @@
 # Broken functionalities
 * ALL working fine
 
-# Hot to test if everything is working fine, after some change
+# How to test if everything is working fine, after some change
 * grunt ---> runs all the grunt tasks; see if nothing is broken on console
 * npm test ---> see if nothing is broken on the console
 * src/index.html in browser (FF) ---> see if there is no error in console and page renders
